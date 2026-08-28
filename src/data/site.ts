@@ -6,7 +6,7 @@ export const PACKAGE_ID = 'com.marsollu.meus_alugueis';
 
 export const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${PACKAGE_ID}`;
 
-export const CONTACT_EMAIL = 'Lucasmarsolv@hotmail.com';
+export const CONTACT_EMAIL = 'appsollu@gmail.com';
 
 /** Ultima revisao das paginas legais. Atualize ao mudar o texto. */
 export const LEGAL_UPDATED_AT = '28 de agosto de 2026';
