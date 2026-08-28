@@ -2,9 +2,9 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Troque para a URL final do site (ex.: https://aluguelfacil.app)
-// Se publicar no GitHub Pages em um subcaminho, defina tambem `base`.
+// O site e servido na raiz do dominio proprio (public/CNAME).
+// Por isso nao ha `base`: os caminhos absolutos (/logo.png) funcionam direto.
 export default defineConfig({
-  site: 'https://marsollu.github.io/aluguel-facil-site',
+  site: 'https://aluguelfacil.app',
   integrations: [sitemap()],
 });

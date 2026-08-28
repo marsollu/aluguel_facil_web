@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aluguelfacil.app/sitemap-index.xml
