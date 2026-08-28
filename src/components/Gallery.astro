@@ -1,0 +1,74 @@
+---
+import { SCREENSHOTS } from '../data/site';
+---
+
+<section class="section gallery" id="telas">
+  <div class="container">
+    <header class="head">
+      <span class="eyebrow">Telas</span>
+      <h2 class="section-title">É assim que fica no seu celular</h2>
+      <p class="section-subtitle">
+        Arraste para o lado para ver as telas principais do app.
+      </p>
+    </header>
+  </div>
+
+  <ul class="rail">
+    {
+      SCREENSHOTS.map((shot, index) => (
+        <li>
+          <img
+            src={shot.src}
+            alt={shot.alt}
+            width="1080"
+            height="1920"
+            loading={index < 2 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .gallery {
+    background: var(--surface);
+  }
+
+  .head {
+    max-width: 640px;
+    margin-bottom: var(--space-5);
+  }
+
+  .rail {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: var(--space-2) max(var(--space-4), calc((100vw - var(--max-width)) / 2 + var(--space-4)));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rail li {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .rail img {
+    width: 268px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    background: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .rail img {
+      width: 232px;
+    }
+  }
+</style>

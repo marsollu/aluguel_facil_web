@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Página não encontrada — Aluguel Fácil"
+  description="A página que você procura não existe."
+>
+  <section class="section notfound">
+    <div class="container">
+      <span class="eyebrow">Erro 404</span>
+      <h1 class="section-title">Esta página não existe</h1>
+      <p class="section-subtitle">
+        O endereço pode ter mudado de lugar. Volte para o início.
+      </p>
+      <a class="btn btn-primary" href="/">Ir para o início</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    text-align: center;
+    padding: var(--space-7) 0;
+  }
+
+  .notfound .section-subtitle {
+    margin-inline: auto;
+    margin-bottom: var(--space-4);
+  }
+</style>

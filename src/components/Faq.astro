@@ -1,0 +1,113 @@
+---
+const QUESTIONS = [
+  {
+    q: 'Preciso criar uma conta para usar?',
+    a: 'Não. O app abre direto no painel. Não há cadastro, login nem perfil online.',
+  },
+  {
+    q: 'O app é grátis?',
+    a: 'Sim, o essencial é grátis: cadastrar imóveis, registrar pagamentos e gerar recibo. A assinatura PRO libera imóveis ilimitados, remove os anúncios, exporta relatórios e dá acesso ao assistente de Carnê-Leão.',
+  },
+  {
+    q: 'Meus dados vão para a internet?',
+    a: 'Não. Imóveis, inquilinos, contratos e pagamentos ficam gravados no seu aparelho. Se trocar de celular, use a exportação de backup para levar seus dados.',
+  },
+  {
+    q: 'Como funciona a cobrança pelo WhatsApp?',
+    a: 'O app abre a conversa com o inquilino já com a mensagem de cobrança preenchida. Você revisa e envia — nada é enviado automaticamente em seu nome.',
+  },
+  {
+    q: 'O assistente de Carnê-Leão substitui meu contador?',
+    a: 'Não. Ele organiza a apuração mensal do IR sobre os aluguéis pelo regime de caixa e separa o que é repasse do que é tributável, para você ou seu contador conferirem. A responsabilidade pela declaração continua sendo sua.',
+  },
+  {
+    q: 'Tem versão para iPhone?',
+    a: 'Por enquanto o app está disponível para Android, na Google Play.',
+  },
+];
+---
+
+<section class="section" id="perguntas">
+  <div class="container">
+    <header class="head">
+      <span class="eyebrow">Dúvidas</span>
+      <h2 class="section-title">Perguntas frequentes</h2>
+    </header>
+
+    <div class="list">
+      {
+        QUESTIONS.map((item) => (
+          <details>
+            <summary>
+              {item.q}
+              <span class="chevron" aria-hidden="true" />
+            </summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .head {
+    max-width: 640px;
+    margin-bottom: var(--space-5);
+  }
+
+  .list {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 800px;
+  }
+
+  details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--background);
+    overflow: hidden;
+  }
+
+  details[open] {
+    background: var(--surface);
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .chevron {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: rotate(45deg);
+    transition: transform 0.18s ease;
+    margin-bottom: 4px;
+  }
+
+  details[open] .chevron {
+    transform: rotate(-135deg);
+    margin-bottom: 0;
+    margin-top: 4px;
+  }
+
+  details p {
+    padding: 0 var(--space-4) var(--space-4);
+    color: var(--text-secondary);
+    max-width: 68ch;
+  }
+</style>

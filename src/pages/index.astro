@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Gallery from '../components/Gallery.astro';
+import Privacy from '../components/Privacy.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title={`${SITE.name} — ${SITE.tagline}`} description={SITE.description}>
+  <Hero />
+  <Features />
+  <Gallery />
+  <Privacy />
+  <Faq />
+  <Cta />
+</Base>

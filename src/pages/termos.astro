@@ -1,0 +1,129 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { SITE, CONTACT_EMAIL } from '../data/site';
+---
+
+<Legal
+  title="Termos de Uso"
+  description={`Condições de uso do aplicativo ${SITE.name}: licença, assinatura PRO, backups e limitações.`}
+>
+  <p>
+    Estes termos regem o uso do aplicativo <strong>{SITE.name}</strong>. Ao
+    instalar ou utilizar o app, você declara que leu e concorda com as condições
+    abaixo.
+  </p>
+
+  <h2>1. O que o app faz</h2>
+  <p>
+    O {SITE.name} é uma ferramenta de organização pessoal para proprietários
+    acompanharem os próprios imóveis alugados: cadastro de imóveis e inquilinos,
+    controle de pagamentos, geração de recibos, registro de manutenções e apoio à
+    apuração do Carnê-Leão.
+  </p>
+  <p>
+    O app <strong>não é</strong> uma imobiliária, corretora, instituição
+    financeira ou escritório de contabilidade, e não intermedeia locações nem
+    pagamentos entre você e seus inquilinos.
+  </p>
+
+  <h2>2. Licença de uso</h2>
+  <p>
+    Concedemos a você uma licença pessoal, não exclusiva e intransferível para
+    usar o app em seus dispositivos. Você não pode redistribuir, revender, alugar
+    ou fazer engenharia reversa do aplicativo.
+  </p>
+
+  <h2>3. Suas responsabilidades</h2>
+  <ul>
+    <li>
+      Manter a exatidão dos dados que cadastra. Os valores, cálculos e relatórios
+      gerados dependem inteiramente do que você informa.
+    </li>
+    <li>
+      Fazer backups. Os dados ficam no seu aparelho; a perda, roubo, defeito ou
+      formatação do dispositivo, ou a desinstalação do app, apaga os registros de
+      forma irreversível.
+    </li>
+    <li>
+      Cumprir a legislação aplicável na relação com seus inquilinos, incluindo a
+      Lei do Inquilinato e a LGPD quanto aos dados pessoais deles que você
+      cadastra.
+    </li>
+  </ul>
+
+  <h2>4. Recibos, relatórios e Carnê-Leão</h2>
+  <p>
+    Os recibos, relatórios e apurações gerados pelo app são documentos de
+    controle produzidos a partir dos dados que você informou. Eles
+    <strong>não constituem aconselhamento contábil, jurídico ou fiscal</strong> e
+    não substituem a orientação de um profissional habilitado nem a conferência
+    junto à Receita Federal. A responsabilidade pela declaração e pelo
+    recolhimento de tributos é exclusivamente sua.
+  </p>
+
+  <h2>5. Assinatura PRO</h2>
+  <p>
+    O app oferece recursos gratuitos e uma assinatura PRO, que remove os anúncios
+    e libera imóveis ilimitados, exportação de relatórios e o assistente de
+    Carnê-Leão.
+  </p>
+  <ul>
+    <li>
+      A compra e a cobrança são processadas pela Google Play, conforme os termos
+      da Google.
+    </li>
+    <li>
+      A assinatura é renovada automaticamente até ser cancelada nas configurações
+      de assinaturas da sua conta Google.
+    </li>
+    <li>
+      Pedidos de reembolso seguem a política da Google Play e devem ser feitos
+      diretamente por lá.
+    </li>
+    <li>
+      Preços e composição dos planos podem mudar; alterações valem para períodos
+      futuros.
+    </li>
+  </ul>
+
+  <h2>6. Anúncios</h2>
+  <p>
+    A versão gratuita exibe anúncios fornecidos pelo Google AdMob. Não temos
+    controle editorial sobre o conteúdo anunciado nem responsabilidade sobre os
+    produtos ou serviços de terceiros divulgados.
+  </p>
+
+  <h2>7. Disponibilidade e alterações</h2>
+  <p>
+    O app é fornecido "no estado em que se encontra". Podemos alterar, suspender
+    ou descontinuar funcionalidades, publicar atualizações e ajustar requisitos
+    técnicos mínimos a qualquer momento.
+  </p>
+
+  <h2>8. Limitação de responsabilidade</h2>
+  <p>
+    Na máxima extensão permitida pela lei, não nos responsabilizamos por perda de
+    dados, lucros cessantes, prejuízos indiretos, decisões tomadas com base nas
+    informações exibidas pelo app, ou por autuações e diferenças de tributos
+    decorrentes de dados incorretos informados por você.
+  </p>
+
+  <h2>9. Encerramento</h2>
+  <p>
+    Você pode encerrar o uso a qualquer momento desinstalando o aplicativo.
+    Assinaturas ativas devem ser canceladas separadamente na Google Play.
+  </p>
+
+  <h2>10. Lei aplicável</h2>
+  <p>
+    Estes termos são regidos pelas leis da República Federativa do Brasil. Fica
+    eleito o foro do domicílio do consumidor para dirimir eventuais controvérsias.
+  </p>
+
+  <h2>11. Contato</h2>
+  <p>
+    Dúvidas sobre estes termos: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
+
+  <p>Veja também a <a href="/privacidade">Política de Privacidade</a>.</p>
+</Legal>

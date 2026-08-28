@@ -1,0 +1,117 @@
+---
+import { SITE, CONTACT_EMAIL, PLAY_STORE_URL } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container inner">
+    <div class="col brand-col">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="" width="32" height="32" />
+        <span>{SITE.name}</span>
+      </a>
+      <p class="tagline">{SITE.tagline}</p>
+    </div>
+
+    <div class="col">
+      <h3>Produto</h3>
+      <a href="/#recursos">Recursos</a>
+      <a href="/#telas">Telas</a>
+      <a href={PLAY_STORE_URL} target="_blank" rel="noopener">Google Play</a>
+    </div>
+
+    <div class="col">
+      <h3>Legal</h3>
+      <a href="/privacidade">Política de privacidade</a>
+      <a href="/termos">Termos de uso</a>
+    </div>
+
+    <div class="col">
+      <h3>Contato</h3>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+    </div>
+  </div>
+
+  <div class="container bottom">
+    <p>© {year} {SITE.name}. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--deep-blue);
+    color: #cbd5e1;
+    padding: var(--space-6) 0 var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .col h3 {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .col a {
+    color: #cbd5e1;
+    font-size: 0.9375rem;
+  }
+
+  .col a:hover {
+    color: #fff;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+
+  .brand img {
+    border-radius: 8px;
+  }
+
+  .tagline {
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    max-width: 34ch;
+  }
+
+  .bottom {
+    margin-top: var(--space-5);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+
+  @media (max-width: 860px) {
+    .inner {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .brand-col {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

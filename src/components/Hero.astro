@@ -1,0 +1,176 @@
+---
+import PlayBadge from './PlayBadge.astro';
+---
+
+<section class="hero">
+  <div class="container grid">
+    <div class="copy">
+      <span class="eyebrow">Para quem aluga o próprio imóvel</span>
+      <h1>Menos controle manual.<br />Mais clareza sobre sua renda.</h1>
+      <p class="lead">
+        O Aluguel Fácil responde as três perguntas que importam: quem me deve, o
+        que vence agora e quanto meus imóveis estão rendendo. Sem planilha, sem
+        cadastro, sem mensalidade para começar.
+      </p>
+
+      <div class="actions">
+        <PlayBadge variant="dark" />
+        <a class="btn btn-ghost" href="#recursos">Ver o que faz</a>
+      </div>
+
+      <ul class="proof">
+        <li>Funciona sem conta</li>
+        <li>Dados no seu celular</li>
+        <li>Grátis para começar</li>
+      </ul>
+    </div>
+
+    <div class="art" aria-hidden="true">
+      <img
+        class="phone back"
+        src="/hero/pagamentos.png"
+        alt=""
+        width="1080"
+        height="2400"
+        loading="eager"
+      />
+      <img
+        class="phone front"
+        src="/hero/dashboard.png"
+        alt=""
+        width="1080"
+        height="2400"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(180deg, var(--light-blue) 0%, #fff 100%);
+    padding: var(--space-7) 0 var(--space-6);
+    overflow: hidden;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-top: var(--space-3);
+    font-weight: 800;
+  }
+
+  .lead {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-top: var(--space-4);
+    max-width: 52ch;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+    margin: var(--space-5) 0 0;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+  }
+
+  .proof li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .proof li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--action-soft)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a7bff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+      center / 11px no-repeat;
+  }
+
+  .art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 520px;
+  }
+
+  .phone {
+    width: 260px;
+    height: auto;
+    border-radius: 30px;
+    border: 8px solid var(--deep-blue);
+    background: #fff;
+    box-shadow: var(--shadow-lg);
+    position: absolute;
+  }
+
+  .front {
+    top: 0;
+    left: 50%;
+    transform: translateX(-62%) rotate(-3deg);
+    z-index: 2;
+  }
+
+  .back {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-6%) rotate(5deg);
+    z-index: 1;
+    opacity: 0.95;
+  }
+
+  @media (max-width: 960px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+
+    .art {
+      min-height: 460px;
+    }
+
+    .phone {
+      width: 220px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .art {
+      min-height: 400px;
+    }
+
+    .phone {
+      width: 185px;
+    }
+
+    .front {
+      transform: translateX(-72%) rotate(-3deg);
+    }
+
+    .back {
+      transform: translateX(-14%) rotate(5deg);
+    }
+  }
+</style>
