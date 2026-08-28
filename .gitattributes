@@ -1,0 +1,13 @@
+# Normaliza finais de linha no repositorio
+* text=auto eol=lf
+
+# Estes precisam de LF: sao lidos por crawlers e pelo GitHub Pages
+public/CNAME        text eol=lf
+public/app-ads.txt  text eol=lf
+public/robots.txt   text eol=lf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
