@@ -6,29 +6,56 @@ import { SCREENSHOTS } from '../data/site';
   <div class="container">
     <header class="head">
       <span class="eyebrow">Telas</span>
-      <h2 class="section-title">É assim que fica no seu celular</h2>
+      <h2 class="section-title">O controle dos seus aluguéis no celular</h2>
       <p class="section-subtitle">
-        Arraste para o lado para ver as telas principais do app.
+        Veja as telas principais do app: painel do mês, imóveis, cobrança,
+        recibo e Carnê-Leão.
       </p>
     </header>
   </div>
 
-  <ul class="rail">
-    {
-      SCREENSHOTS.map((shot, index) => (
-        <li>
-          <img
-            src={shot.src}
-            alt={shot.alt}
-            width="1080"
-            height="1920"
-            loading={index < 2 ? 'eager' : 'lazy'}
-            decoding="async"
+  <div class="container">
+    <div class="viewport">
+      <ul class="rail" tabindex="0" aria-label="Telas do aplicativo">
+        {
+          SCREENSHOTS.map((shot, index) => (
+            <li>
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width="1080"
+                height="1920"
+                loading={index < 2 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <button class="nav prev" type="button" aria-label="Ver telas anteriores" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+      </button>
+      <button class="nav next" type="button" aria-label="Ver próximas telas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+      </button>
+    </div>
+
+    <div class="dots" role="tablist" aria-label="Ir para a tela">
+      {
+        SCREENSHOTS.map((shot, index) => (
+          <button
+            class="dot"
+            type="button"
+            role="tab"
+            data-index={index}
+            aria-label={`Tela ${index + 1}: ${shot.alt}`}
+            aria-selected={index === 0 ? 'true' : 'false'}
           />
-        </li>
-      ))
-    }
-  </ul>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
@@ -41,16 +68,68 @@ import { SCREENSHOTS } from '../data/site';
     margin-bottom: var(--space-5);
   }
 
+  /*
+   * A moldura fica presa a largura do container: e ela que da a leitura de
+   * carrossel — as telas entram e saem de uma janela, em vez de formarem
+   * uma fileira solta ate a borda do monitor.
+   */
+  .viewport {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  /* Esmaece as bordas para sugerir que o trilho continua. */
+  .viewport::before,
+  .viewport::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(32px, 8vw, 96px);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .viewport::before {
+    left: 0;
+    background: linear-gradient(to right, var(--surface), transparent);
+  }
+
+  .viewport::after {
+    right: 0;
+    background: linear-gradient(to left, var(--surface), transparent);
+  }
+
+  /* No fim do trilho a mascara correspondente some. */
+  .viewport[data-at-start]::before,
+  .viewport[data-at-end]::after {
+    opacity: 0;
+  }
+
   .rail {
     display: flex;
     gap: var(--space-4);
     list-style: none;
     margin: 0;
-    padding: var(--space-2) max(var(--space-4), calc((100vw - var(--max-width)) / 2 + var(--space-4)));
+    padding: var(--space-3) 0 var(--space-4);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rail:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: -4px;
+    border-radius: var(--radius);
   }
 
   .rail li {
@@ -58,17 +137,216 @@ import { SCREENSHOTS } from '../data/site';
     scroll-snap-align: center;
   }
 
+  /* Meia coluna vazia nas pontas: a primeira e a ultima tela param centradas. */
+  .rail::before,
+  .rail::after {
+    content: '';
+    flex: 0 0 auto;
+    width: max(0px, calc(50% - 134px - var(--space-4)));
+  }
+
   .rail img {
+    display: block;
     width: 268px;
     height: auto;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     background: #fff;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.4s ease;
+  }
+
+  .rail li:hover img {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    color: var(--text-primary);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+  }
+
+  .nav:hover {
+    transform: translateY(-50%) scale(1.06);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav:active {
+    transform: translateY(-50%) scale(0.97);
+  }
+
+  .nav[hidden] {
+    display: none;
+  }
+
+  .nav svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Ancoradas na borda da moldura, sobre a mascara — nunca sobre uma tela. */
+  .prev {
+    left: 8px;
+  }
+
+  .next {
+    right: 8px;
+  }
+
+  @media (min-width: 901px) {
+    .nav:not([hidden]) {
+      display: grid;
+    }
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--space-4);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--border);
+    cursor: pointer;
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease;
+  }
+
+  .dot[aria-selected='true'] {
+    width: 24px;
+    background: var(--primary-blue);
+  }
+
+  .dot:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 3px;
   }
 
   @media (max-width: 600px) {
     .rail img {
       width: 232px;
     }
+
+    .rail::before,
+    .rail::after {
+      width: max(0px, calc(50% - 116px - var(--space-4)));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rail {
+      scroll-behavior: auto;
+    }
+
+    .rail img,
+    .nav,
+    .dot {
+      transition: none;
+    }
+
+    .rail li:hover img {
+      transform: none;
+    }
   }
 </style>
+
+<script>
+  // Progressive enhancement: sem JS o trilho continua arrastavel.
+  document.querySelectorAll<HTMLElement>('.gallery .container').forEach((root) => {
+    const view = root.querySelector<HTMLElement>('.viewport');
+    const rail = root.querySelector<HTMLElement>('.rail');
+    const prev = root.querySelector<HTMLButtonElement>('.nav.prev');
+    const next = root.querySelector<HTMLButtonElement>('.nav.next');
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('.dot')];
+    if (!view || !rail || !prev || !next) return;
+
+    const cards = [...rail.querySelectorAll<HTMLElement>('li')];
+
+    const step = () => {
+      if (!cards[0]) return rail.clientWidth * 0.8;
+      const gap = parseFloat(getComputedStyle(rail).columnGap || '0') || 0;
+      return cards[0].getBoundingClientRect().width + gap;
+    };
+
+    /** Indice do card cujo centro esta mais perto do centro da moldura. */
+    const activeIndex = () => {
+      const mid = rail.scrollLeft + rail.clientWidth / 2;
+      let best = 0;
+      let dist = Infinity;
+      cards.forEach((card, i) => {
+        const center = card.offsetLeft + card.offsetWidth / 2;
+        const d = Math.abs(center - mid);
+        if (d < dist) {
+          dist = d;
+          best = i;
+        }
+      });
+      return best;
+    };
+
+    const sync = () => {
+      const max = rail.scrollWidth - rail.clientWidth;
+      const atStart = rail.scrollLeft <= 4;
+      const atEnd = rail.scrollLeft >= max - 4;
+
+      prev.hidden = atStart;
+      next.hidden = atEnd;
+      view.toggleAttribute('data-at-start', atStart);
+      view.toggleAttribute('data-at-end', atEnd);
+
+      const active = activeIndex();
+      dots.forEach((dot, i) =>
+        dot.setAttribute('aria-selected', i === active ? 'true' : 'false')
+      );
+    };
+
+    prev.addEventListener('click', () =>
+      rail.scrollBy({ left: -step(), behavior: 'smooth' })
+    );
+    next.addEventListener('click', () =>
+      rail.scrollBy({ left: step(), behavior: 'smooth' })
+    );
+
+    dots.forEach((dot, i) =>
+      dot.addEventListener('click', () => {
+        const card = cards[i];
+        if (!card) return;
+        rail.scrollTo({
+          left: card.offsetLeft - (rail.clientWidth - card.offsetWidth) / 2,
+          behavior: 'smooth',
+        });
+      })
+    );
+
+    rail.addEventListener('scroll', () => window.requestAnimationFrame(sync));
+    window.addEventListener('resize', sync);
+    sync();
+  });
+</script>

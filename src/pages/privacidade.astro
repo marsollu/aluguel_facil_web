@@ -5,230 +5,273 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
 
 <Legal
   title="Política de Privacidade"
-  description={`Como o ${SITE.name} trata seus dados: o que fica no aparelho, o que é coletado e com quem é compartilhado.`}
+  description={`Política de privacidade do ${SITE.name}, app de controle de aluguel: o que fica no seu aparelho, o que é coletado e com quem é compartilhado.`}
 >
+  <h2>1. Quem somos</h2>
   <p>
-    Esta Política de Privacidade descreve como o aplicativo
-    <strong>{SITE.name}</strong> trata informações pessoais, em conformidade com
-    a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados — LGPD).
-  </p>
-  <p>
-    O controlador dos dados tratados por meio do aplicativo é
-    <strong>AppSollu</strong>, que pode ser contatado pelo e-mail
-    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    O <strong>{SITE.name}</strong> é um aplicativo para organizar imóveis, contratos
+    e aluguéis, mantido por um desenvolvedor independente.
   </p>
 
-  <h2>1. Resumo</h2>
+  <h2>2. Dados que coletamos</h2>
   <p>
-    O {SITE.name} é um aplicativo <strong>local-first</strong>. Os dados que você
-    cadastra — imóveis, inquilinos, contratos, pagamentos, recibos, manutenções e
-    contas de consumo — são gravados no armazenamento do próprio aparelho. Esses
-    dados <strong>não são enviados para servidores nossos</strong>, não são
-    vendidos e não são usados para publicidade.
+    Não coletamos diretamente dados que identifiquem você e não temos servidores
+    próprios guardando suas informações. Tudo o que você cadastra no app fica no
+    seu celular:
   </p>
-  <p>
-    O aplicativo coleta separadamente um conjunto limitado de dados técnicos de
-    uso e estabilidade, descritos no item 3.
-  </p>
-
-  <h2>2. Dados que ficam apenas no seu aparelho</h2>
-  <p>Permanecem exclusivamente no dispositivo, sem transmissão para nós:</p>
   <ul>
-    <li>Dados dos imóveis (endereço, valor do aluguel, características).</li>
-    <li>Dados dos inquilinos (nome, contato, informações do contrato).</li>
-    <li>Histórico de pagamentos, recibos e reajustes.</li>
-    <li>Manutenções, despesas e contas de consumo (água, luz e gás).</li>
+    <li>Seus imóveis, contratos e pagamentos ficam apenas no seu aparelho.</li>
+    <li>Suas configurações e preferências são salvas no próprio aparelho.</li>
+    <li>Não pedimos cadastro, login, e-mail nem senha.</li>
+  </ul>
+  <p>
+    Usamos, porém, serviços do Google que coletam dados de uso do aplicativo e
+    informações da assinatura, como descrito nos itens 4, 5 e 6.
+  </p>
+
+  <h2>3. O que fica no seu aparelho</h2>
+  <p>Permanecem exclusivamente no seu celular:</p>
+  <ul>
+    <li>Cadastro de imóveis e inquilinos.</li>
+    <li>Contratos e histórico de pagamentos.</li>
+    <li>Manutenções, despesas e contas de água, luz e gás.</li>
     <li>Apurações do assistente de Carnê-Leão.</li>
-    <li>Preferências e configurações do aplicativo.</li>
+    <li>Preferências de configuração.</li>
   </ul>
   <p>
-    <strong>Sobre os dados de terceiros que você cadastra:</strong> ao registrar
-    informações de inquilinos, você atua como controlador desses dados perante a
-    LGPD. Cabe a você ter base legal para tratá-los — em regra, a execução do
-    contrato de locação — e atender eventuais solicitações dessas pessoas. Nós
-    não temos acesso a esses registros.
+    Nada sai do seu aparelho a menos que você queira — por exemplo, ao gerar um
+    recibo em PDF, exportar um backup ou compartilhar uma tela.
   </p>
   <p>
-    Se você desinstalar o aplicativo sem gerar um backup, esses dados são
-    apagados e não temos como recuperá-los.
+    Ao cadastrar informações de inquilinos, cabe a você tratá-las com o devido
+    cuidado. Não temos acesso a esses registros.
+  </p>
+  <p>
+    Se você desinstalar o app sem gerar um backup, esses dados são apagados e não
+    temos como recuperá-los.
   </p>
 
-  <h2>3. Dados coletados automaticamente</h2>
+  <h2>4. Análise de uso e anúncios</h2>
   <p>
-    Para manter o aplicativo funcionando, corrigir falhas e entender o uso,
-    utilizamos serviços do Google que coletam dados técnicos de forma agregada ou
-    pseudonimizada. Abaixo, a finalidade e a base legal de cada tratamento:
+    Para entender como o app é usado e para mantê-lo gratuito, usamos os serviços
+    de análise e de anúncios do Google.
+  </p>
+
+  <h3>Análise de uso</h3>
+  <p>
+    A análise de uso mostra, de forma agrupada e sem identificar você, como o app
+    é utilizado — quais telas são mais acessadas e se houve falhas — para que
+    possamos melhorá-lo.
+  </p>
+  <p><strong>O que é coletado:</strong></p>
+  <ul>
+    <li>
+      Um código que identifica a instalação, gerado ao acaso e renovado se você
+      reinstalar o app.
+    </li>
+    <li>O identificador de anúncios do aparelho, quando disponível.</li>
+    <li>Tipo, modelo e fabricante do aparelho.</li>
+    <li>Versão do sistema.</li>
+    <li>País ou região aproximada.</li>
+    <li>Idioma do aparelho.</li>
+    <li>
+      Ações dentro do app, como abertura, atualizações e tempo de uso.
+    </li>
+    <li>Registros de erro, para que possamos corrigir problemas.</li>
+  </ul>
+  <p>
+    Esses dados são coletados e tratados pelo Google, conforme as políticas
+    dele. Para saber mais:
   </p>
   <ul>
     <li>
-      <strong>Firebase Analytics</strong> — eventos de uso (telas abertas, ações
-      realizadas), modelo do aparelho, versão do sistema, idioma e região
-      aproximada.<br />
-      <em>Finalidade:</em> entender quais funcionalidades são utilizadas e
-      priorizar melhorias. <em>Base legal:</em> legítimo interesse (art. 7º, IX).
-    </li>
-    <li>
-      <strong>Firebase Crashlytics</strong> — registro de erros, estado do
-      aparelho no momento da falha e versão do aplicativo.<br />
-      <em>Finalidade:</em> identificar e corrigir defeitos.
-      <em>Base legal:</em> legítimo interesse (art. 7º, IX).
-    </li>
-    <li>
-      <strong>Firebase Remote Config</strong> — parâmetros de configuração
-      baixados pelo aplicativo.<br />
-      <em>Finalidade:</em> ajustar o comportamento do app sem exigir atualização.
-      <em>Base legal:</em> execução do contrato (art. 7º, V).
-    </li>
-    <li>
-      <strong>Firebase Authentication</strong> — identificador anônimo gerado
-      para a instalação. Não solicita nem armazena nome, e-mail ou senha.<br />
-      <em>Finalidade:</em> distinguir instalações e viabilizar recursos da conta.
-      <em>Base legal:</em> execução do contrato (art. 7º, V).
-    </li>
-    <li>
-      <strong>Google AdMob</strong> — identificador de publicidade do aparelho e
-      dados de interação com anúncios, na versão gratuita.<br />
-      <em>Finalidade:</em> exibir anúncios que sustentam a versão gratuita.
-      <em>Base legal:</em> legítimo interesse, com possibilidade de oposição nas
-      configurações do Android (art. 7º, IX, e art. 18, § 2º).
-    </li>
-    <li>
-      <strong>Google Play Faturamento</strong> — confirmação e status da
-      assinatura PRO.<br />
-      <em>Finalidade:</em> liberar os recursos contratados.
-      <em>Base legal:</em> execução do contrato (art. 7º, V). O pagamento é
-      processado pela Google; não recebemos nem armazenamos dados do seu cartão.
-    </li>
-  </ul>
-
-  <h2>4. Permissões do aparelho</h2>
-  <ul>
-    <li>
-      <strong>Internet</strong> — necessária para anúncios, relatórios de falha e
-      configuração remota.
-    </li>
-    <li>
-      <strong>Armazenamento e arquivos</strong> — usada apenas quando você gera
-      um recibo em PDF, exporta um backup ou importa um arquivo salvo por você.
-    </li>
-    <li>
-      <strong>Notificações</strong> — usada para lembretes de vencimento gerados
-      no próprio aparelho.
-    </li>
-  </ul>
-  <p>
-    As permissões são solicitadas no momento do uso e podem ser revogadas a
-    qualquer tempo nas configurações do Android, com eventual perda da
-    funcionalidade correspondente.
-  </p>
-
-  <h2>5. Compartilhamento com terceiros</h2>
-  <p>
-    Não vendemos, alugamos nem compartilhamos os dados dos seus imóveis e
-    inquilinos. O compartilhamento se limita aos serviços do Google descritos no
-    item 3, que atuam como operadores e possuem políticas próprias:
-  </p>
-  <ul>
-    <li>
-      <a
-        href="https://firebase.google.com/support/privacy"
-        target="_blank"
-        rel="noopener">Privacidade do Firebase</a
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+        >Política de Privacidade do Google</a
       >
     </li>
     <li>
       <a
-        href="https://policies.google.com/technologies/ads"
+        href="https://policies.google.com/technologies/partner-sites"
         target="_blank"
-        rel="noopener">Como o Google usa dados em anúncios</a
+        rel="noopener">Como o Google usa informações de sites e apps</a
       >
     </li>
   </ul>
+  <p><strong>Como reduzir essa coleta:</strong></p>
+  <ul>
+    <li>
+      Limite a personalização em <strong>Configurações → Google → Anúncios</strong>,
+      no seu aparelho.
+    </li>
+    <li>
+      Redefinir o identificador de anúncios também renova o código que identifica
+      a instalação.
+    </li>
+  </ul>
+
+  <h3>Anúncios</h3>
   <p>
-    Podemos divulgar informações quando houver obrigação legal, ordem judicial ou
-    requisição de autoridade competente.
+    Na versão gratuita, exibimos anúncios para manter o {SITE.name} acessível.
+    Quem assina o plano PRO não vê anúncios.
+  </p>
+  <p><strong>O que é coletado para os anúncios:</strong></p>
+  <ul>
+    <li>O identificador de anúncios do aparelho.</li>
+    <li>Endereço de conexão à internet.</li>
+    <li>Localização aproximada.</li>
+    <li>Idioma do aparelho.</li>
+    <li>Tipo e modelo do aparelho.</li>
+    <li>Versão do sistema.</li>
+    <li>Interesses baseados no seu uso.</li>
+  </ul>
+  <p>
+    Essas informações servem para escolher os anúncios exibidos, considerando
+    localização, idioma, uso do aplicativo e interação com os anúncios.
+  </p>
+  <p><strong>Como controlar:</strong></p>
+  <ul>
+    <li>Desative o rastreamento de anúncios nas configurações do aparelho.</li>
+    <li>
+      Use as
+      <a href="https://adssettings.google.com" target="_blank" rel="noopener"
+        >configurações de anúncios do Google</a
+      > para gerenciar a personalização.
+    </li>
+    <li>
+      Você pode recusar anúncios personalizados — ainda verá anúncios, mas
+      escolhidos sem esses dados.
+    </li>
+  </ul>
+
+  <h2>5. Assinatura PRO</h2>
+  <p>
+    O {SITE.name} tem um plano de assinatura opcional, mensal ou anual, que
+    remove os anúncios e libera recursos adicionais.
   </p>
   <p>
-    Quando você utiliza a cobrança pelo WhatsApp, o aplicativo apenas abre o
-    WhatsApp com a mensagem preenchida. O envio é feito por você, e o conteúdo
-    passa a ser regido pela política daquele aplicativo.
+    O pagamento é processado pela Google Play. Não temos acesso a dados de
+    cartão, informações bancárias ou qualquer dado de pagamento — isso fica
+    apenas com o Google.
+  </p>
+  <ul>
+    <li>
+      A assinatura é contratada, gerenciada e cancelada na sua conta Google Play,
+      em <strong>Play Store → Menu → Pagamentos e assinaturas → Assinaturas</strong>.
+    </li>
+    <li>
+      A renovação é automática ao fim de cada período, a menos que você cancele
+      antes pela Google Play.
+    </li>
+    <li>
+      O app guarda no aparelho apenas se a assinatura está ativa, para liberar os
+      recursos.
+    </li>
+    <li>
+      Não guardamos histórico de cobranças nem valores pagos, porque não temos
+      servidores próprios.
+    </li>
+  </ul>
+  <p>
+    Para dúvidas sobre cobranças, reembolsos ou cancelamento, consulte a
+    <a href="https://support.google.com/googleplay" target="_blank" rel="noopener"
+      >Central de Ajuda do Google Play</a
+    >.
   </p>
 
-  <h2>6. Transferência internacional de dados</h2>
+  <h2>6. Com quem os dados são compartilhados</h2>
   <p>
-    Os serviços do Google citados no item 3 podem processar e armazenar dados em
-    servidores localizados fora do Brasil. Essas transferências ocorrem com base
-    nas salvaguardas adotadas pelo próprio Google, conforme os arts. 33 e
-    seguintes da LGPD.
+    Não vendemos seus dados. O compartilhamento se limita aos serviços do Google
+    usados pelo app:
+  </p>
+  <ul>
+    <li>Análise de uso, para entender e melhorar o aplicativo.</li>
+    <li>Anúncios, na versão gratuita.</li>
+    <li>Google Play, para processar a assinatura.</li>
+  </ul>
+  <p>
+    Também podemos fornecer informações quando houver obrigação legal ou pedido
+    de autoridade competente.
+  </p>
+  <p>
+    Quando você cobra pelo WhatsApp, o app apenas abre a conversa com a mensagem
+    pronta. O envio é feito por você, e a partir daí vale a política daquele
+    aplicativo.
   </p>
 
-  <h2>7. Retenção e eliminação</h2>
+  <h2>7. Permissões do aparelho</h2>
+  <ul>
+    <li>
+      <strong>Internet</strong> — anúncios, análise de uso e verificação da
+      assinatura.
+    </li>
+    <li>
+      <strong>Arquivos</strong> — usada apenas quando você gera um recibo em PDF,
+      exporta um backup ou abre um arquivo salvo por você.
+    </li>
+    <li>
+      <strong>Notificações</strong> — lembretes de vencimento criados no próprio
+      aparelho.
+    </li>
+  </ul>
   <p>
-    Os dados cadastrados permanecem no seu aparelho enquanto você mantiver o
-    aplicativo instalado, e são eliminados quando você os apaga no app ou o
-    desinstala.
-  </p>
-  <p>
-    Os dados técnicos do item 3 seguem os prazos de retenção dos serviços do
-    Google — em regra, até 14 meses para dados de uso e até 90 dias para
-    relatórios de falha — após os quais são excluídos ou anonimizados.
+    As permissões podem ser revogadas quando você quiser, nas configurações do
+    aparelho. A funcionalidade correspondente deixa de funcionar.
   </p>
 
   <h2>8. Segurança</h2>
   <p>
-    Adotamos medidas técnicas compatíveis com a natureza do aplicativo. Como os
-    dados ficam no seu aparelho, a proteção depende principalmente das
-    salvaguardas do dispositivo: mantenha o bloqueio de tela ativo, o sistema
-    atualizado e tenha cuidado ao compartilhar arquivos de backup, que contêm
-    seus registros em formato legível.
-  </p>
-  <p>
-    Nenhum sistema é totalmente imune. Caso ocorra incidente de segurança
-    relevante envolvendo dados sob nossa responsabilidade, comunicaremos os
-    titulares e a ANPD nos termos do art. 48 da LGPD.
+    Como tudo fica no seu celular, a segurança depende principalmente dele.
+    Recomendamos manter o aparelho protegido com senha ou biometria, o sistema
+    atualizado, e ter cuidado ao compartilhar arquivos de backup, que contêm seus
+    registros de forma legível.
   </p>
 
-  <h2>9. Seus direitos</h2>
+  <h2>9. Por quanto tempo os dados ficam</h2>
   <p>
-    A LGPD assegura a você, a qualquer momento, os direitos de confirmação da
-    existência de tratamento, acesso, correção de dados incompletos ou
-    desatualizados, anonimização, bloqueio ou eliminação de dados desnecessários,
-    portabilidade, informação sobre compartilhamento, revogação do consentimento
-    e oposição a tratamento fundado em legítimo interesse.
+    Os dados no seu aparelho somem quando você desinstala o app. Você também pode
+    apagar qualquer registro quando quiser, dentro do aplicativo.
   </p>
   <p>
-    Sobre os dados cadastrados no app, você exerce esses direitos diretamente:
-    pode consultar, editar e apagar qualquer registro dentro do aplicativo,
-    exportar um backup ou desinstalá-lo. Para os dados técnicos do item 3, envie
-    sua solicitação para
-    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; responderemos no
-    prazo legal.
-  </p>
-  <p>
-    Você também pode limitar a personalização de anúncios nas configurações de
-    privacidade do Android e tem o direito de peticionar à Autoridade Nacional de
-    Proteção de Dados (ANPD).
+    Os dados de uso, anúncios e assinatura tratados pelo Google seguem os prazos
+    do próprio Google.
   </p>
 
-  <h2>10. Crianças e adolescentes</h2>
+  <h2>10. Seus direitos</h2>
+  <p>Como os dados cadastrados são seus e ficam no seu aparelho:</p>
+  <ul>
+    <li>Você consulta tudo quando quiser.</li>
+    <li>Você corrige ou apaga qualquer registro.</li>
+    <li>Você exporta um backup para levar seus dados com você.</li>
+    <li>Você gerencia ou cancela a assinatura pela Google Play.</li>
+  </ul>
   <p>
-    O {SITE.name} destina-se a maiores de 18 anos, proprietários de imóveis. Não
-    coletamos intencionalmente dados de crianças ou adolescentes. Caso
-    identifiquemos coleta nessas condições, os dados serão eliminados.
+    Você também pode pedir informações sobre os dados de uso descritos nos itens
+    4 e 5, ou solicitar que sejam apagados, pelo e-mail do item 13.
   </p>
 
-  <h2>11. Alterações desta política</h2>
+  <h2>11. Crianças</h2>
   <p>
-    Esta política pode ser atualizada para refletir mudanças no aplicativo ou na
-    legislação. A data da última revisão consta no topo desta página, e
-    alterações relevantes serão comunicadas na ficha do aplicativo na Google Play
-    ou dentro do próprio app.
+    Este app é destinado a maiores de 18 anos e não coletamos intencionalmente
+    dados de crianças ou adolescentes.
   </p>
 
-  <h2>12. Contato</h2>
+  <h2>12. Mudanças nesta política</h2>
   <p>
-    Dúvidas sobre esta política ou solicitações relacionadas aos seus dados:
+    Podemos atualizar esta política quando necessário. Havendo mudanças
+    importantes, avisaremos pelo app ou pela Google Play. A versão vigente é
+    sempre a desta página, identificada pela data no topo.
+  </p>
+
+  <h2>13. Contato</h2>
+  <p>
+    Dúvidas sobre esta política ou sobre seus dados, escreva para
     <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
   </p>
+
+  <h2>14. Lei aplicável</h2>
+  <p>
+    Esta política segue as leis brasileiras de proteção de dados.
+  </p>
+
   <p>Veja também os <a href="/termos">Termos de Uso</a>.</p>
 </Legal>

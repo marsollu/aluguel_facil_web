@@ -8,7 +8,11 @@ import Cta from '../components/Cta.astro';
 import { SITE } from '../data/site';
 ---
 
-<Base title={`${SITE.name} — ${SITE.tagline}`} description={SITE.description}>
+<Base
+  title={`${SITE.name} — ${SITE.tagline}`}
+  description={SITE.description}
+  page="home"
+>
   <Hero />
   <Features />
   <Gallery />

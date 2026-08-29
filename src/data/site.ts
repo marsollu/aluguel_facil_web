@@ -8,14 +8,30 @@ export const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${P
 
 export const CONTACT_EMAIL = 'appsollu@gmail.com';
 
+/** Dominio canonico, sem barra final. Usado nos dados estruturados. */
+export const SITE_URL = 'https://aluguelfacil.app';
+
+/**
+ * Categoria e sistema do app nos dados estruturados (schema.org).
+ * FinanceApplication e a categoria que o Google reconhece para controle
+ * financeiro pessoal.
+ */
+export const APP_SCHEMA = {
+  category: 'FinanceApplication',
+  operatingSystem: 'Android',
+  /** Imagem usada no card de resultado rico e nas previas sociais. */
+  image: '/screenshots/01_tudo_em_ordem.png',
+};
+
 /** Ultima revisao das paginas legais. Atualize ao mudar o texto. */
 export const LEGAL_UPDATED_AT = '28 de agosto de 2026';
 
 export const SITE = {
   name: 'Aluguel Fácil',
-  tagline: 'Menos controle manual. Mais clareza sobre sua renda.',
+  /** Titulo da home. Usado no <title> junto do nome — mire em 60 caracteres. */
+  tagline: 'Controle de aluguel no celular, sem planilha',
   description:
-    'App para proprietários acompanharem aluguéis: quem deve, o que vence agora e quanto entrou. Os dados ficam no seu celular.',
+    'App de controle de aluguel para quem aluga o próprio imóvel: quem deve, o que vence, recibo em PDF e Carnê-Leão pronto. Substitui a planilha, sem cadastro.',
 };
 
 export interface Feature {
@@ -26,9 +42,9 @@ export interface Feature {
 
 export const FEATURES: Feature[] = [
   {
-    title: 'Quem deve e o que vence',
+    title: 'Controle de pagamentos',
     description:
-      'O painel do mês abre direto com previsto, recebido e pendente. Sem procurar em planilha.',
+      'O painel do mês abre com previsto, recebido e pendente: quem deve e o que vence, sem procurar em planilha.',
     icon: 'dashboard',
   },
   {
@@ -44,9 +60,9 @@ export const FEATURES: Feature[] = [
     icon: 'receipt',
   },
   {
-    title: 'Assistente de Carnê-Leão',
+    title: 'Carnê-Leão e imposto de renda',
     description:
-      'Apuração mensal do IR sobre aluguéis pelo regime de caixa, já separando o que é repasse.',
+      'Apuração mensal do imposto sobre aluguéis pelo regime de caixa, já separando o que é repasse.',
     icon: 'tax',
   },
   {
@@ -81,4 +97,37 @@ export const SCREENSHOTS: Screenshot[] = [
   { src: '/screenshots/06_agua_luz_e_gas.png', alt: 'Histórico de contas de água, luz e gás do imóvel' },
   { src: '/screenshots/11_agenda_do_mes.png', alt: 'Agenda do mês com os vencimentos' },
   { src: '/screenshots/12_anuncie_o_imovel.png', alt: 'Anúncio do imóvel disponível para alugar' },
+];
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+/** Fonte unica do FAQ: alimenta a secao visivel e o schema FAQPage. */
+export const FAQ: FaqItem[] = [
+  {
+    q: 'Preciso criar uma conta para usar?',
+    a: 'Não. O app abre direto no painel. Não há cadastro, login nem perfil online.',
+  },
+  {
+    q: 'O app é grátis?',
+    a: 'Sim, o essencial é grátis: cadastrar imóveis, registrar pagamentos e gerar recibo. A assinatura PRO libera imóveis ilimitados, remove os anúncios, exporta relatórios e dá acesso ao assistente de Carnê-Leão.',
+  },
+  {
+    q: 'Meus dados vão para a internet?',
+    a: 'Não. Imóveis, inquilinos, contratos e pagamentos ficam gravados no seu aparelho. Se trocar de celular, use a exportação de backup para levar seus dados.',
+  },
+  {
+    q: 'Como funciona a cobrança pelo WhatsApp?',
+    a: 'O app abre a conversa com o inquilino já com a mensagem de cobrança preenchida. Você revisa e envia — nada é enviado automaticamente em seu nome.',
+  },
+  {
+    q: 'O assistente de Carnê-Leão substitui meu contador?',
+    a: 'Não. Ele organiza a apuração mensal do IR sobre os aluguéis pelo regime de caixa e separa o que é repasse do que é tributável, para você ou seu contador conferirem. A responsabilidade pela declaração continua sendo sua.',
+  },
+  {
+    q: 'Tem versão para iPhone?',
+    a: 'Por enquanto o app está disponível para Android, na Google Play.',
+  },
 ];

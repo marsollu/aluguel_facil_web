@@ -47,25 +47,32 @@ const { title, description } = Astro.props;
 
   .prose :global(h2) {
     font-size: 1.25rem;
-    margin-top: var(--space-5);
-    margin-bottom: var(--space-2);
+    margin: 2em 0 0.6em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prose :global(h3) {
+    font-size: 1.0625rem;
+    margin: 1.6em 0 0.5em;
   }
 
   .prose :global(p),
   .prose :global(li) {
     color: #374151;
+    line-height: 1.7;
   }
 
   .prose :global(p) {
-    margin-bottom: var(--space-3);
+    margin: 0 0 1em;
   }
 
   .prose :global(ul) {
-    margin: 0 0 var(--space-3);
-    padding-left: 22px;
+    margin: 0 0 1.2em;
+    padding-left: 1.3em;
   }
 
   .prose :global(li) {
-    margin-bottom: 6px;
+    margin-bottom: 0.4em;
   }
 </style>

@@ -6,5 +6,10 @@ import sitemap from '@astrojs/sitemap';
 // Por isso nao ha `base`: os caminhos absolutos (/logo.png) funcionam direto.
 export default defineConfig({
   site: 'https://aluguelfacil.app',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // A 404 e noindex; nao deve constar do sitemap.
+      filter: (page) => !page.includes('/404'),
+    }),
+  ],
 });
