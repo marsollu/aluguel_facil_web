@@ -1,5 +1,10 @@
 ---
-import { SITE, CONTACT_EMAIL, PLAY_STORE_URL } from '../data/site';
+import {
+  SITE,
+  CONTACT_EMAIL,
+  APP_STORE_URL,
+  PLAY_STORE_URL,
+} from '../data/site';
 
 const year = new Date().getFullYear();
 ---
@@ -18,6 +23,7 @@ const year = new Date().getFullYear();
       <h3>Produto</h3>
       <a href="/#recursos">Recursos</a>
       <a href="/#telas">Telas</a>
+      <a href={APP_STORE_URL} target="_blank" rel="noopener">App Store</a>
       <a href={PLAY_STORE_URL} target="_blank" rel="noopener">Google Play</a>
     </div>
 

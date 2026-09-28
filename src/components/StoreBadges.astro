@@ -1,0 +1,23 @@
+---
+import StoreBadge from './StoreBadge.astro';
+
+interface Props {
+  /** Repassado para os dois badges. */
+  variant?: 'light' | 'dark';
+}
+
+const { variant = 'dark' } = Astro.props;
+---
+
+<div class="store-badges">
+  <StoreBadge store="apple" variant={variant} />
+  <StoreBadge store="play" variant={variant} />
+</div>
+
+<style>
+  .store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>

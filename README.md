@@ -1,6 +1,6 @@
 # Aluguel Fácil — Web
 
-Landing page e páginas legais do app [Aluguel Fácil](https://play.google.com/store/apps/details?id=com.marsollu.meus_alugueis).
+Landing page e páginas legais do app Aluguel Fácil ([App Store](https://apps.apple.com/br/app/aluguel-f%C3%A1cil-controle-im%C3%B3vel/id6811875632) · [Google Play](https://play.google.com/store/apps/details?id=com.marsollu.meus_alugueis)).
 
 Construído com [Astro](https://astro.build) — site estático, sem backend.
 

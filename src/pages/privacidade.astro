@@ -15,18 +15,47 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
 
   <h2>2. Dados que coletamos</h2>
   <p>
-    Não coletamos diretamente dados que identifiquem você e não temos servidores
-    próprios guardando suas informações. Tudo o que você cadastra no app fica no
-    seu celular:
+    Não temos servidores próprios guardando suas informações. Tudo o que você
+    cadastra no app fica no seu celular:
   </p>
   <ul>
     <li>Seus imóveis, contratos e pagamentos ficam apenas no seu aparelho.</li>
     <li>Suas configurações e preferências são salvas no próprio aparelho.</li>
-    <li>Não pedimos cadastro, login, e-mail nem senha.</li>
+    <li>
+      Criar uma conta é opcional. O app funciona por completo sem cadastro.
+    </li>
   </ul>
   <p>
-    Usamos, porém, serviços do Google que coletam dados de uso do aplicativo e
-    informações da assinatura, como descrito nos itens 4, 5 e 6.
+    Usamos, porém, serviços de terceiros que coletam dados de uso do aplicativo
+    e informações da assinatura, como descrito nos itens 4, 5 e 6.
+  </p>
+
+  <h3>Conta com e-mail (opcional)</h3>
+  <p>
+    Se você quiser, pode criar uma conta em
+    <strong>Conta → Minha conta</strong>. Ela serve para identificar você e
+    manter a assinatura PRO ao trocar de aparelho. Seus imóveis, inquilinos e
+    pagamentos continuam só no aparelho — a conta não envia nem sincroniza esses
+    registros.
+  </p>
+  <p><strong>O que é coletado, só se você criar a conta:</strong></p>
+  <ul>
+    <li>Seu e-mail, para entrar, confirmar a conta e recuperar a senha.</li>
+    <li>
+      Sua senha, guardada de forma criptografada pelo Firebase Authentication,
+      serviço do Google. Nós não temos acesso a ela.
+    </li>
+  </ul>
+  <p>
+    Mesmo sem conta, o app cria na primeira abertura um identificador anônimo,
+    gerado ao acaso, que não contém seu nome nem seu e-mail. Ele liga a
+    assinatura PRO ao app e passa a identificar sua conta se você criar uma.
+  </p>
+  <p>
+    <strong>Como remover:</strong> em
+    <strong>Conta → Minha conta → Apagar conta</strong>. A conta, o e-mail e o
+    identificador são apagados do Firebase, e todos os dados do aparelho são
+    removidos. Se preferir, peça a exclusão pelo e-mail do item 13.
   </p>
 
   <h2>3. O que fica no seu aparelho</h2>
@@ -100,8 +129,12 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
   <p><strong>Como reduzir essa coleta:</strong></p>
   <ul>
     <li>
-      Limite a personalização em <strong>Configurações → Google → Anúncios</strong>,
-      no seu aparelho.
+      No Android, limite a personalização em
+      <strong>Configurações → Google → Anúncios</strong>.
+    </li>
+    <li>
+      No iPhone, desative a permissão em
+      <strong>Ajustes → Privacidade e Segurança → Rastreamento</strong>.
     </li>
     <li>
       Redefinir o identificador de anúncios também renova o código que identifica
@@ -130,6 +163,10 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
   </p>
   <p><strong>Como controlar:</strong></p>
   <ul>
+    <li>
+      No iPhone, o app pede sua permissão antes de usar o identificador de
+      anúncios. Se você recusar, os anúncios continuam, mas sem personalização.
+    </li>
     <li>Desative o rastreamento de anúncios nas configurações do aparelho.</li>
     <li>
       Use as
@@ -149,22 +186,26 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
     remove os anúncios e libera recursos adicionais.
   </p>
   <p>
-    O pagamento é processado pela Google Play. Não temos acesso a dados de
-    cartão, informações bancárias ou qualquer dado de pagamento — isso fica
-    apenas com o Google.
+    O pagamento é processado pela loja em que você baixou o app: App Store, no
+    iPhone, ou Google Play, no Android. Não temos acesso a dados de cartão,
+    informações bancárias ou qualquer dado de pagamento — isso fica apenas com a
+    Apple ou com o Google.
   </p>
   <ul>
     <li>
-      A assinatura é contratada, gerenciada e cancelada na sua conta Google Play,
-      em <strong>Play Store → Menu → Pagamentos e assinaturas → Assinaturas</strong>.
+      A assinatura é contratada, gerenciada e cancelada na sua conta da loja. No
+      iPhone, em <strong>Ajustes → [seu nome] → Assinaturas</strong>. No
+      Android, em
+      <strong>Play Store → Menu → Pagamentos e assinaturas → Assinaturas</strong>.
     </li>
     <li>
       A renovação é automática ao fim de cada período, a menos que você cancele
-      antes pela Google Play.
+      antes pela loja.
     </li>
     <li>
-      O app guarda no aparelho apenas se a assinatura está ativa, para liberar os
-      recursos.
+      A situação da assinatura é verificada pelo RevenueCat, serviço que confirma
+      as compras junto à loja. Ele recebe o identificador anônimo do item 2 e os
+      dados da compra, mas não recebe seus dados de cartão.
     </li>
     <li>
       Não guardamos histórico de cobranças nem valores pagos, porque não temos
@@ -172,7 +213,10 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
     </li>
   </ul>
   <p>
-    Para dúvidas sobre cobranças, reembolsos ou cancelamento, consulte a
+    Para dúvidas sobre cobranças, reembolsos ou cancelamento, consulte o
+    <a href="https://support.apple.com/pt-br/billing" target="_blank" rel="noopener"
+      >Suporte da Apple</a
+    > ou a
     <a href="https://support.google.com/googleplay" target="_blank" rel="noopener"
       >Central de Ajuda do Google Play</a
     >.
@@ -180,13 +224,17 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
 
   <h2>6. Com quem os dados são compartilhados</h2>
   <p>
-    Não vendemos seus dados. O compartilhamento se limita aos serviços do Google
-    usados pelo app:
+    Não vendemos seus dados. O compartilhamento se limita aos serviços usados
+    pelo app:
   </p>
   <ul>
-    <li>Análise de uso, para entender e melhorar o aplicativo.</li>
-    <li>Anúncios, na versão gratuita.</li>
-    <li>Google Play, para processar a assinatura.</li>
+    <li>Google, para análise de uso, relatórios de erro e anúncios.</li>
+    <li>
+      Firebase Authentication (Google), para a conta opcional e o identificador
+      anônimo.
+    </li>
+    <li>App Store ou Google Play, para processar a assinatura.</li>
+    <li>RevenueCat, para verificar se a assinatura está ativa.</li>
   </ul>
   <p>
     Também podemos fornecer informações quando houver obrigação legal ou pedido
@@ -201,8 +249,17 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
   <h2>7. Permissões do aparelho</h2>
   <ul>
     <li>
-      <strong>Internet</strong> — anúncios, análise de uso e verificação da
-      assinatura.
+      <strong>Internet</strong> — anúncios, análise de uso, conta opcional e
+      verificação da assinatura.
+    </li>
+    <li>
+      <strong>Contatos</strong> — usada apenas quando você escolhe um contato para
+      preencher o nome e o telefone do inquilino. Os contatos não são enviados
+      para lugar nenhum.
+    </li>
+    <li>
+      <strong>Fotos</strong> — usada apenas quando você escolhe imagens do
+      imóvel. As fotos ficam no aparelho.
     </li>
     <li>
       <strong>Arquivos</strong> — usada apenas quando você gera um recibo em PDF,
@@ -211,6 +268,10 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
     <li>
       <strong>Notificações</strong> — lembretes de vencimento criados no próprio
       aparelho.
+    </li>
+    <li>
+      <strong>Rastreamento</strong> (iPhone) — usada para personalizar anúncios,
+      só se você permitir.
     </li>
   </ul>
   <p>
@@ -232,8 +293,13 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
     apagar qualquer registro quando quiser, dentro do aplicativo.
   </p>
   <p>
-    Os dados de uso, anúncios e assinatura tratados pelo Google seguem os prazos
-    do próprio Google.
+    O e-mail da conta opcional fica guardado enquanto a conta existir e é
+    apagado quando você apaga a conta.
+  </p>
+  <p>
+    Os dados de uso e anúncios tratados pelo Google seguem os prazos do próprio
+    Google. Os dados da assinatura seguem os prazos da Apple ou do Google,
+    conforme a loja usada.
   </p>
 
   <h2>10. Seus direitos</h2>
@@ -242,7 +308,11 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
     <li>Você consulta tudo quando quiser.</li>
     <li>Você corrige ou apaga qualquer registro.</li>
     <li>Você exporta um backup para levar seus dados com você.</li>
-    <li>Você gerencia ou cancela a assinatura pela Google Play.</li>
+    <li>
+      Você apaga a conta opcional e o e-mail em
+      <strong>Conta → Minha conta → Apagar conta</strong>.
+    </li>
+    <li>Você gerencia ou cancela a assinatura pela App Store ou pela Google Play.</li>
   </ul>
   <p>
     Você também pode pedir informações sobre os dados de uso descritos nos itens
@@ -258,7 +328,7 @@ import { SITE, CONTACT_EMAIL } from '../data/site';
   <h2>12. Mudanças nesta política</h2>
   <p>
     Podemos atualizar esta política quando necessário. Havendo mudanças
-    importantes, avisaremos pelo app ou pela Google Play. A versão vigente é
+    importantes, avisaremos pelo app ou pela loja de aplicativos. A versão vigente é
     sempre a desta página, identificada pela data no topo.
   </p>
 

@@ -6,6 +6,10 @@ export const PACKAGE_ID = 'com.marsollu.meus_alugueis';
 
 export const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${PACKAGE_ID}`;
 
+export const APP_STORE_ID = '6811875632';
+
+export const APP_STORE_URL = `https://apps.apple.com/br/app/aluguel-f%C3%A1cil-controle-im%C3%B3vel/id${APP_STORE_ID}`;
+
 export const CONTACT_EMAIL = 'appsollu@gmail.com';
 
 /** Dominio canonico, sem barra final. Usado nos dados estruturados. */
@@ -18,13 +22,13 @@ export const SITE_URL = 'https://aluguelfacil.app';
  */
 export const APP_SCHEMA = {
   category: 'FinanceApplication',
-  operatingSystem: 'Android',
+  operatingSystem: 'Android, iOS',
   /** Imagem usada no card de resultado rico e nas previas sociais. */
-  image: '/screenshots/01_tudo_em_ordem.png',
+  image: '/screenshots/og_resumo.jpg',
 };
 
 /** Ultima revisao das paginas legais. Atualize ao mudar o texto. */
-export const LEGAL_UPDATED_AT = '28 de agosto de 2026';
+export const LEGAL_UPDATED_AT = '28 de setembro de 2026';
 
 export const SITE = {
   name: 'Aluguel Fácil',
@@ -85,18 +89,17 @@ export interface Screenshot {
 }
 
 export const SCREENSHOTS: Screenshot[] = [
-  { src: '/screenshots/01_tudo_em_ordem.png', alt: 'Painel do mês mostrando quanto foi recebido e as últimas movimentações' },
-  { src: '/screenshots/03_seus_imoveis.png', alt: 'Lista de imóveis cadastrados com status de cada um' },
-  { src: '/screenshots/13_cobranca_facil.png', alt: 'Cobrança pelo WhatsApp com a mensagem já preenchida' },
-  { src: '/screenshots/07_recebeu_um_toque.png', alt: 'Registro de pagamento recebido em um toque' },
-  { src: '/screenshots/10_carne_leao_pronto.png', alt: 'Assistente de Carnê-Leão com a apuração do mês pronta' },
-  { src: '/screenshots/09_relatorio_do_mes.png', alt: 'Relatório mensal com o resumo dos aluguéis' },
-  { src: '/screenshots/02_seu_ano_inteiro.png', alt: 'Visão anual da renda dos imóveis' },
-  { src: '/screenshots/04_contrato_sempre_a_mao.png', alt: 'Contrato do inquilino com vencimento e reajuste' },
-  { src: '/screenshots/05_reparos_anotados.png', alt: 'Manutenções e reparos anotados por imóvel' },
-  { src: '/screenshots/06_agua_luz_e_gas.png', alt: 'Histórico de contas de água, luz e gás do imóvel' },
-  { src: '/screenshots/11_agenda_do_mes.png', alt: 'Agenda do mês com os vencimentos' },
-  { src: '/screenshots/12_anuncie_o_imovel.png', alt: 'Anúncio do imóvel disponível para alugar' },
+  { src: '/screenshots/01_resumo_progresso.webp', alt: 'Resumo do mês mostrando quanto já foi recebido do total previsto' },
+  { src: '/screenshots/02_resumo_grafico.webp', alt: 'Gráfico com a renda dos imóveis mês a mês' },
+  { src: '/screenshots/03_imoveis_lista.webp', alt: 'Lista de imóveis com status, inquilino e valor do aluguel' },
+  { src: '/screenshots/04_pagamentos_lista.webp', alt: 'Pagamentos do mês com botões para marcar como recebido e gerar recibo' },
+  { src: '/screenshots/05_contas_consumo.webp', alt: 'Contas de água, luz e internet do imóvel e quem pagou cada uma' },
+  { src: '/screenshots/06_relatorio_mensal.webp', alt: 'Relatório mensal com o resumo e a lista de pagamentos' },
+  { src: '/screenshots/07_carne_leao.webp', alt: 'Carnê-Leão com o imposto estimado no ano e o valor de cada mês' },
+  { src: '/screenshots/08_agenda_mes.webp', alt: 'Agenda do mês com os vencimentos e pagamentos por dia' },
+  { src: '/screenshots/09_analise_imovel.webp', alt: 'Análise do imóvel com receita, despesas e resultado no ano' },
+  { src: '/screenshots/10_imovel_completo.webp', alt: 'Página do imóvel com contrato, manutenções e histórico de pagamentos' },
+  { src: '/screenshots/11_modo_escuro.webp', alt: 'Resumo do mês no tema escuro' },
 ];
 
 export interface FaqItem {
@@ -108,7 +111,7 @@ export interface FaqItem {
 export const FAQ: FaqItem[] = [
   {
     q: 'Preciso criar uma conta para usar?',
-    a: 'Não. O app abre direto no painel. Não há cadastro, login nem perfil online.',
+    a: 'Não. O app abre direto no painel e funciona por completo sem cadastro. Se quiser, você pode criar uma conta com e-mail para manter a assinatura PRO ao trocar de aparelho — e apagá-la quando quiser.',
   },
   {
     q: 'O app é grátis?',
@@ -128,6 +131,6 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: 'Tem versão para iPhone?',
-    a: 'Por enquanto o app está disponível para Android, na Google Play.',
+    a: 'Sim. O app está na App Store para iPhone e na Google Play para Android.',
   },
 ];

@@ -1,5 +1,5 @@
 ---
-import { PLAY_STORE_URL, SITE } from '../data/site';
+import { APP_STORE_URL, PLAY_STORE_URL, SITE } from '../data/site';
 ---
 
 <header class="site-header">
@@ -17,12 +17,36 @@ import { PLAY_STORE_URL, SITE } from '../data/site';
 
     <a
       class="btn btn-primary btn-sm"
-      href={PLAY_STORE_URL}
-      target="_blank"
-      rel="noopener">Baixar</a
+      href="/#baixar"
+      data-download
+      data-apple={APP_STORE_URL}
+      data-play={PLAY_STORE_URL}>Baixar</a
     >
   </div>
 </header>
+
+<script>
+  // No celular, "Baixar" vai direto para a loja do aparelho. No computador
+  // (ou sem JS), leva para a secao com os dois badges.
+  const link = document.querySelector<HTMLAnchorElement>('[data-download]');
+  if (link) {
+    const ua = navigator.userAgent;
+    const isIOS =
+      /iPhone|iPad|iPod/.test(ua) ||
+      (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/.test(ua);
+    const store = isIOS
+      ? link.dataset.apple
+      : isAndroid
+        ? link.dataset.play
+        : undefined;
+    if (store) {
+      link.href = store;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+  }
+</script>
 
 <style>
   .site-header {
